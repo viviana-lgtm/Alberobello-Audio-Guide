@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Aberobello – audioguide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f8f8f8;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 1.6rem;
+      margin-bottom: 16px;
+    }
+
+    audio {
+      width: 100%;
+      margin-bottom: 24px;
+    }
+
+    .chapter {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+      cursor: pointer;
+      transition: transform 0.1s ease;
+    }
+
+    .chapter:hover {
+      transform: scale(1.01);
+    }
+
+    .number {
+      background: #0066cc;
+      color: white;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    .title {
+      flex-grow: 1;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .play {
+      font-size: 1.4rem;
+      color: #0066cc;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>🎧 Aberobello – audioguide</h1>
+
+<audio id="audio" controls>
+  <source src="audioguida audioguida alb hu.mp3" type="audio/mpeg">
+</audio>
+
+<div class="chapter" onclick="goTo(0)">
+  <div class="number">1</div>
+  <div class="title">Itria-völgy</div>
+  <div class="play">▶️</div>
+</div>
+
+<div class="chapter" onclick="goTo(222)">
+  <div class="number">2</div>
+  <div class="title">Alberobello története</div>
+  <div class="play">▶️</div>
+</div>
+
+<div class="chapter" onclick="goTo(402)">
+  <div class="number">3</div>
+  <div class="title">A Területi Múzeum</div>
+  <div class="play">▶️</div>
+</div>
+
+<div class="chapter" onclick="goTo(457)">
+  <div class="number">4</div>
+  <div class="title">Az Aia Piccola negyed</div>
+  <div class="play">▶️</div>
+</div>
+
+<div class="chapter" onclick="goTo(512)">
+  <div class="number">5</div>
+  <div class="title">Santa Lucia kilatò</div>
+  <div class="play">▶️</div>
+</div>
+
+<div class="chapter" onclick="goTo(550)">
+  <div class="number">6</div>
+  <div class="title">Casa D'Amore</div>
+  <div class="play">▶️</div>
+</div>
+
+<div class="chapter" onclick="goTo(607)">
+  <div class="number">7</div>
+  <div class="title">Trullo Sovrano</div>
+  <div class="play">▶️</div>
+</div>
+
+<div class="chapter" onclick="goTo(675)">
+  <div class="number">8</div>
+  <div class="title">A Monti negyed</div>
+  <div class="play">▶️</div>
+</div>
+
+<div class="chapter" onclick="goTo(725)">
+  <div class="number">9</div>
+  <div class="title">Szent Antal-templom</div>
+  <div class="play">▶️</div>
+</div>
+
+<div class="chapter" onclick="goTo(816)">
+  <div class="number">10</div>
+  <div class="title">A Trulli Siamesi</div>
+  <div class="play">▶️</div>
+</div>
+
+<div class="chapter" onclick="goTo(853)">
+  <div class="number">11</div>
+  <div class="title">Történetek és érdekességek</div>
+  <div class="play">▶️</div>
+</div>
+
+<div class="chapter" onclick="goTo(858)">
+  <div class="number">12</div>
+  <div class="title">A Trulli Siamesi legendája</div>
+  <div class="play">▶️</div>
+</div>
+
+<div class="chapter" onclick="goTo(977)">
+  <div class="number">13</div>
+  <div class="title">A Trulli szimbólumok</div>
+  <div class="play">▶️</div>
+</div>
+
+<script>
+  const audio = document.getElementById("audio");
+
+  function goTo(seconds) {
+    audio.currentTime = seconds;
+    audio.play();
+  }
+</script>
+
+</body>
+</html>
